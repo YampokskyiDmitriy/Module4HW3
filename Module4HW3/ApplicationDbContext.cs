@@ -17,6 +17,7 @@ namespace Module4HW3
         public DbSet<Office> Office { get; set; }
         public DbSet<Project> Project { get; set; }
         public DbSet<Title> Title { get; set; }
+        public DbSet<Client> Client { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,6 +26,7 @@ namespace Module4HW3
             modelBuilder.ApplyConfiguration(new OfficeConfig());
             modelBuilder.ApplyConfiguration(new ProjectConfig());
             modelBuilder.ApplyConfiguration(new TitleConfig());
+            modelBuilder.ApplyConfiguration(new ClientConfig());
         }
     }
 }

@@ -10,5 +10,7 @@ namespace Module4HW3.Entities
         public decimal Budget { get; set; }
         public DateTime StartedDate { get; set; }
         public ICollection<EmployeeProject> EmployeeProject { get; set; }
+        public int ClientId { get; set; }
+        public Client Client { get; set; }
     }
 }
