@@ -99,7 +99,8 @@ namespace Module4HW3
                        .Include(t => t.Title)
                        .GroupBy(g => g.Title.Name)
                        .Select(s => s.Key)
-                       .Where(w => !EF.Functions.Like(w, "%a%")).ToListAsync();
+                       .Where(w => !EF.Functions.Like(w, "%a%"))
+                       .ToListAsync();
         }
     }
 }
