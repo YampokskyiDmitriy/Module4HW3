@@ -13,7 +13,7 @@ namespace Module4HW3.EntityConfigurations
             builder.ToTable("Client");
 
             builder.HasKey(c => c.ClientId);
-
+            builder.Property(c => c.ClientId).ValueGeneratedNever();
             builder.Property(c => c.FirstName).IsRequired().HasMaxLength(50);
             builder.Property(c => c.SecondName).IsRequired().HasMaxLength(50);
             builder.Property(c => c.Email).IsRequired().HasMaxLength(50);
