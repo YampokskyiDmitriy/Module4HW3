@@ -95,12 +95,11 @@ namespace Module4HW3
 
         public async Task SixthRequest()
         {
-            await _context.Employee
-                        .Include(t => t.Title)
-                        .GroupBy(g => g.Title.Name)
-                        .Select(s => s.Key)
-                        .Where(w => EF.Functions.Like(w, "^a"))
-                        .ToListAsync();
+            var req = await _context.Employee
+                       .Include(t => t.Title)
+                       .GroupBy(g => g.Title.Name)
+                       .Select(s => s.Key)
+                       .Where(w => !EF.Functions.Like(w, "%a%")).ToListAsync();
         }
     }
 }
